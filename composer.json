@@ -1,0 +1,59 @@
+{
+    "name": "kasevvlad/idempotency",
+    "description": "Idempotency-Key header support for Laravel and Symfony: safe retries for POST/PATCH requests",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["idempotency", "idempotency-key", "laravel", "symfony", "middleware", "api", "retry"],
+    "authors": [
+        {
+            "name": "kasevvlad",
+            "email": "vladkasev13@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "symfony/http-foundation": "^6.4 || ^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0 || ^10.0",
+        "phpstan/phpstan": "^2.0",
+        "phpunit/phpunit": "^11.0",
+        "symfony/cache": "^6.4 || ^7.0",
+        "symfony/config": "^6.4 || ^7.0",
+        "symfony/dependency-injection": "^6.4 || ^7.0",
+        "symfony/http-kernel": "^6.4 || ^7.0",
+        "symfony/lock": "^6.4 || ^7.0",
+        "symfony/security-core": "^6.4 || ^7.0"
+    },
+    "suggest": {
+        "laravel/framework": "Use the idempotent middleware in a Laravel app",
+        "symfony/framework-bundle": "Use IdempotencyBundle in a Symfony app",
+        "symfony/lock": "Required by the Symfony store"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kasevvlad\\Idempotency\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kasevvlad\\Idempotency\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kasevvlad\\Idempotency\\Laravel\\IdempotencyServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "analyse": "phpstan analyse"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
